@@ -37,4 +37,16 @@ struct UploadToTestFlight: LaneAction {
     }
 }
 
+struct SwiftLint: LaneAction {
+    func run() {
+        swiftlint()
+    }
+}
+
+struct Sonar: LaneAction {
+    func run() {
+        sonar()
+    }
+}
+
 /* More lanes here */

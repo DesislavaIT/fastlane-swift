@@ -23,6 +23,18 @@ open class Fastfile: LaneFile {
         runner.run()
     }
     
+    @LaneBuilder
+    func validateLaneBuild() -> [LaneAction] {
+        SwiftLint()
+        Sonar()
+    }
+    
+    func validateLane() {
+        let actions = validateLaneBuild()
+        let runner = LaneRunner(actions: actions)
+        runner.run()
+    }
+    
     /* More lanes here */
 }
 

@@ -18,6 +18,10 @@ public struct LaneBuilder {
         return [incrementBuildNumberAction] + actions
     }
     
+    public static func buildBlock( _ actions: LaneAction...) ->  [LaneAction] {
+        actions
+    }
+    
     public static func buildBlock(_ version: String) -> LaneAction {
         IncrementBuildNumber { version }
     }
